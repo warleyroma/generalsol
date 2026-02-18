@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shalom | Soluções Financeiras</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+<style>
+
+/* =========================
+   CORES E BASE
+========================= */
+
+:root {
+    --gold: #C6A75E;
+    --black: #0B0B0B;
+    --dark: #111111;
+    --gray: #999;
+}
+
+body {
+    background-color: var(--black);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+section {
+    padding: 100px 0;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+}
+
+.gold {
+    color: var(--gold);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 12px 28px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-gold:hover {
+    background: #b89545;
+    color: #000;
+}
+
+.btn-outline-gold {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn-outline-gold:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+.bg-dark-custom {
+    background: var(--dark);
+}
+
+.card-custom {
+    background: #151515;
+    border: 1px solid #222;
+    padding: 30px;
+    height: 100%;
+    transition: .3s;
+}
+
+.card-custom:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.icon-gold {
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.navbar {
+    background: rgba(0,0,0,0.9);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--gold) !important;
+    letter-spacing: 2px;
+}
+
+.navbar-brand .logo-navbar {
+    height: 140px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .logo-navbar {
+        height: 40px;
+    }
+}
+
+.nav-link {
+    color: #fff !important;
+    margin-left: 15px;
+}
+
+.nav-link:hover {
+    color: var(--gold) !important;
+}
+
+footer {
+    background: #000;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, #000, #0b0b0b);
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 20px auto;
+}
+
+.social-icon {
+    font-size: 28px;
+    color: var(--gold);
+    margin: 0 15px;
+    transition: .3s;
+}
+
+.social-icon:hover {
+    color: #fff;
+}
+
+/* PRELOADER */
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.preloader-logo {
+    width: 300px;
+    animation: pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+</style>
+</head>
+
+<script>
+window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    setTimeout(() => {
+        preloader.classList.add("hidden");
+    }, 1200); // tempo mínimo de exibição
+});
+</script>
+
+<body>
+
+<div id="preloader">
+<img src="img/logo.png.png" alt="Shalom" class="preloader-logo">
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="img/logo.png.png" alt=" " class="logo-navbar">
+    </a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#para-quem">Para Quem</a></li>
+        <li class="nav-item"><a class="nav-link" href="#o-que-faz">Soluções</a></li>
+        <li class="nav-item"><a class="nav-link" href="#seguranca">Segurança</a></li>
+        <li class="nav-item"><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-center">
+<div class="container">
+    <h1 class="display-4 gold mb-4">Soluções financeiras para igrejas, OSCs, pequenos negócios e empreendedores</h1>
+    <p class="lead mb-4">
+        Conta digital, Pix, pagamentos e gestão financeira em uma plataforma moderna, segura e transparente.
+    </p>
+    <a href="#contato" class="btn btn-gold me-3">Quero abrir minha conta</a>
+    <a href="#contato" class="btn btn-outline-gold">Falar com um especialista</a>
+</div>
+</section>
+
+<!-- SOBRE -->
+<section class="bg-dark-custom text-center">
+<div class="container">
+    <h2 class="gold">Sobre a Shalom</h2>
+    <div class="divider"></div>
+    <p class="col-lg-8 mx-auto">
+        A Shalom é uma plataforma de soluções financeiras criada para apoiar igrejas,
+        Organizações da Sociedade Civil (OSCs), pequenos negócios e empreendedores.
+        Operamos com infraestrutura moderna e parceiros regulados.
+        A Shalom não é um banco, mas atua como plataforma financeira conectando seus clientes a serviços bancários.
+    </p>
+</div>
+</section>
+
+<!-- PARA QUEM -->
+<section id="para-quem">
+<div class="container text-center">
+<h2 class="gold">Para Quem é a Shalom</h2>
+<div class="divider"></div>
+
+<div class="row mt-5 g-4">
+
+<div class="col-md-6 col-lg-3">
+<div class="card-custom">
+<i class="bi bi-building icon-gold"></i>
+<h5>Igrejas</h5>
+<p>Conta dedicada, Pix para dízimos e organização financeira por projetos.</p>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="card-custom">
+<i class="bi bi-people icon-gold"></i>
+<h5>OSCs</h5>
+<p>Contas para projetos, pagamentos rastreáveis e apoio à prestação de contas.</p>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="card-custom">
+<i class="bi bi-shop icon-gold"></i>
+<h5>Pequenos Negócios</h5>
+<p>Conta PJ simplificada com Pix, boletos e gestão financeira prática.</p>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="card-custom">
+<i class="bi bi-graph-up icon-gold"></i>
+<h5>Empresas</h5>
+<p>Estrutura financeira moderna para crescimento sustentável.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- O QUE FAZ -->
+<section id="o-que-faz" class="bg-dark-custom text-center">
+<div class="container">
+<h2 class="gold">O que você pode fazer com a Shalom</h2>
+<div class="divider"></div>
+
+<div class="row mt-5 g-4">
+
+<div class="col-md-4">
+<div class="card-custom">
+<i class="bi bi-credit-card icon-gold"></i>
+<h5>Conta Digital</h5>
+<p>Abertura online PF ou PJ com gestão completa.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-custom">
+<i class="bi bi-lightning-charge icon-gold"></i>
+<h5>Pix 24/7</h5>
+<p>Envie e receba pagamentos a qualquer hora.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-custom">
+<i class="bi bi-receipt icon-gold"></i>
+<h5>Boletos</h5>
+<p>Emissão e acompanhamento de boletos registrados.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-custom">
+<i class="bi bi-bar-chart icon-gold"></i>
+<h5>Gestão Financeira</h5>
+<p>Controle completo de entradas e saídas.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-custom">
+<i class="bi bi-shield-lock icon-gold"></i>
+<h5>Segurança</h5>
+<p>Compliance, KYC e monitoramento de transações.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- SEGURANÇA -->
+<section id="seguranca" class="text-center">
+<div class="container">
+<h2 class="gold">Segurança, Compliance e Confiança</h2>
+<div class="divider"></div>
+<p class="col-lg-8 mx-auto">
+Processos de KYC, prevenção à fraude, compliance regulatório e parcerias com instituições financeiras reguladas.
+A segurança dos recursos e dados é prioridade absoluta.
+</p>
+</div>
+</section>
+
+<!-- COMO FUNCIONA (ATUALIZADO COM ÍCONES COERENTES) -->
+<section id="como-funciona" class="bg-dark-custom text-center">
+<div class="container">
+<h2 class="gold">Como Funciona</h2>
+<div class="divider"></div>
+
+<div class="row mt-5 g-4">
+
+<div class="col-md-3">
+<div class="card-custom">
+<i class="bi bi-person-plus icon-gold"></i>
+<h5>Cadastro Online</h5>
+<p>Preencha seus dados de forma simples e rápida.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card-custom">
+<i class="bi bi-patch-check icon-gold"></i>
+<h5>Validação</h5>
+<p>Processo de verificação e compliance automatizado.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card-custom">
+<i class="bi bi-unlock icon-gold"></i>
+<h5>Ativação</h5>
+<p>Sua conta é ativada após aprovação.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card-custom">
+<i class="bi bi-arrow-left-right icon-gold"></i>
+<h5>Operação</h5>
+<p>Envie e receba Pix, faça pagamentos e gerencie recursos.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FALE CONOSCO -->
+<section id="contato" class="text-center">
+<div class="container">
+<h2 class="gold">Fale Conosco</h2>
+<div class="divider"></div>
+
+<p class="mb-5">
+Entre em contato conosco através dos nossos canais oficiais.
+</p>
+
+<div class="d-flex justify-content-center align-items-center flex-wrap">
+
+<a href="#" target="_blank">
+<i class="bi bi-linkedin social-icon"></i>
+</a>
+
+<a href="#" target="_blank">
+<i class="bi bi-whatsapp social-icon"></i>
+</a>
+
+<a href="#" target="_blank">
+<i class="bi bi-instagram social-icon"></i>
+</a>
+
+<!-- Bootstrap JS 
+<a href="formulario.html" target="_blank" class="btn btn-outline-gold ms-3">
+<i class="bi bi-envelope me-2"></i>Acessar formulário
+</a>
+-->
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 SHALOM — Plataforma de Soluções Financeiras  
+<br>
+A Shalom não é banco. Atua por meio de parceiros regulados.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
