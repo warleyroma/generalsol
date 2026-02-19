@@ -155,6 +155,7 @@ footer {
     color: #fff;
 }
 
+
 /* PRELOADER */
 
 #preloader {
@@ -184,6 +185,140 @@ footer {
     opacity: 0;
     visibility: hidden;
 }
+
+.map-full {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.map-full iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    display: block;
+}
+
+.contact-card {
+    background: #151515;
+    padding: 40px 25px;
+    border: 1px solid #222;
+    transition: .3s;
+    height: 100%;
+}
+
+.contact-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.contact-card h5 {
+    font-weight: 600;
+}
+
+.contact-card p {
+    color: var(--gray);
+    margin: 0;
+}
+
+
+.footer-custom {
+    background: #000;
+    padding: 80px 0 40px;
+}
+
+.footer-title {
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-text {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-social a {
+    font-size: 20px;
+    margin-right: 15px;
+    color: var(--gold);
+    transition: .3s;
+}
+
+.footer-social a:hover {
+    color: #fff;
+}
+
+.footer-divider {
+    border-color: #222;
+    margin: 40px 0;
+}
+
+.footer-bottom {
+    color: var(--gray);
+}
+
+.maquininhas-section-3d {
+    background: radial-gradient(circle at top, #111 0%, #000 60%);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.gold-wave {
+   position: absolute;
+    top: 65%;   
+    left: 0;
+    width: 110%;
+    height: 250px;
+    opacity: 0.8;
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+.maquininhas-section-3d .container {
+    position: relative;
+    z-index: 2;
+}
+
+.maquininha-list {
+    list-style: none;
+    padding: 0;
+}
+
+.maquininha-list li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: var(--gray);
+}
+
+.maquininha-list i {
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+
+
+
 
 </style>
 </head>
@@ -346,6 +481,54 @@ window.addEventListener("load", function () {
 </div>
 </section>
 
+<section id="maquininhas" class="maquininhas-section-3d">
+
+  <!-- LINHA DOURADA FULL WIDTH -->
+  <svg class="gold-wave" viewBox="0 0 1920 300" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#8F6B29"/>
+        <stop offset="30%" stop-color="#C6A75E"/>
+        <stop offset="50%" stop-color="#F5E2A3"/>
+        <stop offset="70%" stop-color="#C6A75E"/>
+        <stop offset="100%" stop-color="#8F6B29"/>
+      </linearGradient>
+    </defs>
+    <path d="M0 270 Q960 355 1920 210"  
+          stroke="url(#goldGradient)" 
+          stroke-width="5" 
+          fill="none"/>
+  </svg>
+
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- TEXTO -->
+      <div class="col-lg-6">
+        <h2 class="gold mb-4">Maquininhas Shalom</h2>
+        <p class="lead mb-4">
+          Tecnologia, mobilidade e performance para quem precisa receber
+          com segurança e agilidade.
+        </p>
+
+        <ul class="maquininha-list">
+          <li><i class="bi bi-check-circle-fill"></i> Pix direto na maquininha</li>
+          <li><i class="bi bi-check-circle-fill"></i> Crédito e débito</li>
+          <li><i class="bi bi-check-circle-fill"></i> Conexão Wi-Fi e 4G</li>
+          <li><i class="bi bi-check-circle-fill"></i> Liquidação rápida</li>
+        </ul>
+
+        <a href="#contato" class="btn btn-gold mt-4">
+          Solicitar Maquininha
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
 <!-- SEGURANÇA -->
 <section id="seguranca" class="text-center">
 <div class="container">
@@ -403,82 +586,140 @@ A segurança dos recursos e dados é prioridade absoluta.
 </section>
 
 <!-- FALE CONOSCO -->
-<section id="contato" class="text-center">
-<div class="container">
-<h2 class="gold">Fale com a Shalom Finance</h2>
-<div class="divider"></div>
+<section id="contato" class="text-center bg-dark-custom">
+  <div class="container">
 
-<p class="mb-5">
-Entre em contato conosco através dos nossos canais oficiais.
-</p>
+    <h2 class="gold">Fale com a Shalom Finance</h2>
+    <div class="divider"></div>
 
-<div class="d-flex justify-content-center align-items-center flex-wrap">
+    <p class="mb-5">
+      Entre em contato conosco através dos nossos canais oficiais.
+    </p>
 
-<a href="#" target="_blank">
-<i class="bi bi-linkedin social-icon"></i>
-</a>
+    <!-- REDES SOCIAIS 
+    <div class="mb-5">
+      <a href="#" target="_blank" class="social-icon">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="#" target="_blank" class="social-icon">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+      <a href="#" target="_blank" class="social-icon">
+        <i class="bi bi-instagram"></i>
+      </a>
+    </div>
+    -->
+    <!-- INFORMAÇÕES -->
+    <div class="row g-4 justify-content-center">
 
-<a href="#" target="_blank">
-<i class="bi bi-whatsapp social-icon"></i>
-</a>
+      <div class="col-md-4">
+        <div class="contact-card">
+          <i class="bi bi-geo-alt icon-gold"></i>
+          <h5 class="mt-3">Endereço</h5>
+          <p>Av. Paulista, 302<br>sala 50 – Bela Vista</p>
+        </div>
+      </div>
 
-<a href="#" target="_blank">
-<i class="bi bi-instagram social-icon"></i>
-</a>
+      <div class="col-md-4">
+        <div class="contact-card">
+          <i class="bi bi-telephone icon-gold"></i>
+          <h5 class="mt-3">Telefone</h5>
+          <p>+55 11 97584-1684</p>
+        </div>
+      </div>
 
-<div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-md-4">
+        <div class="contact-card">
+          <i class="bi bi-envelope icon-gold"></i>
+          <h5 class="mt-3">E-mail</h5>
+          <p>contato@shalombank.com</p>
+        </div>
+      </div>
 
-        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.983967152552!2d-46.646619699999995!3d-23.569019299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59be80960a5b%3A0x349993c340836386!2sAv.%20Paulista%2C%20302%20-%20sala%2050%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-000!5e0!3m2!1spt-BR!2sbr!4v1752148994088!5m2!1spt-BR!2sbr" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div><!-- End Google Maps -->
+    </div>
 
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Endereço</h3>
-                <p>Av. Paulista, 302 - sala 50 - Bela Vista</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Telefone</h3>
-                <p>+55 11 97584-1684</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>E-mail</h3>
-                <p>contato@shalombank.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-<!-- Bootstrap JS 
-<a href="formulario.html" target="_blank" class="btn btn-outline-gold ms-3">
-<i class="bi bi-envelope me-2"></i>Acessar formulário
-</a>
--->
-</div>
-
-</div>
+  </div>
 </section>
 
-<footer>
-© 2026 SHALOM — Plataforma de Soluções Financeiras  
-<br>
-A Shalom não é banco. Atua por meio de parceiros regulados.
-</footer>
+
+<section class="map-full">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.983967152552!2d-46.646619699999995!3d-23.569019299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59be80960a5b%3A0x349993c340836386!2sAv.%20Paulista%2C%20302%20-%20sala%2050%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-000!5e0!3m2!1spt-BR!2sbr!4v1752148994088!5m2!1spt-BR!2sbr"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<footer id="footer" class="footer-custom">
+
+  <div class="container">
+
+    <div class="row gy-5">
+
+      <!-- LOGO + SOBRE -->
+      <div class="col-lg-4">
+        <img src="img/logo.png.png" alt="Shalom Finance" style="height:150px;">
+        <p class="mt-4 footer-text">
+          Plataforma de soluções financeiras para igrejas, OSCs,
+          pequenos negócios e empreendedores.
+        </p>
+      </div>
+
+      <!-- LINKS -->
+      <div class="col-lg-4">
+        <h5 class="footer-title">Navegação</h5>
+        <ul class="footer-links">
+          <li><a href="#para-quem">Para Quem</a></li>
+          <li><a href="#o-que-faz">Soluções</a></li>
+          <li><a href="#seguranca">Segurança</a></li>
+          <li><a href="#como-funciona">Como Funciona</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTATO -->
+      <div class="col-lg-4">
+        <h5 class="footer-title">Contato</h5>
+        <p class="footer-text">
+          Av. Paulista, 302
+          Sala 50 – Bela Vista – SP
+        </p>
+        <p class="footer-text">
+          +55 11 97584-1684<br>
+          contato@shalombank.com
+        </p>
+
+        <div class="footer-social mt-3">
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LINHA DIVISÓRIA -->
+    <hr class="footer-divider">
+
+    <!-- COPYRIGHT -->
+    <div class="text-center footer-bottom">
+      © 2026 <strong>Shalom Finance</strong> — Todos os direitos reservados.
+      <br>
+      <small>
+        A Shalom não é banco. Atua por meio de parceiros regulados.
+      </small>
+    </div>
+
+  </div>
+
+</footer>
+
+
 </body>
 </html>
-
 
