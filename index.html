@@ -45,6 +45,41 @@ h1, h2, h3, h4 {
     color: var(--gold);
 }
 
+/* =========================
+   HERO BUTTONS PADRONIZADOS
+========================= */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-hero {
+    min-width: 260px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-hero {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
 .btn-gold {
     background: var(--gold);
     color: #000;
@@ -93,17 +128,22 @@ h1, h2, h3, h4 {
 }
 
 .navbar {
+    
+    background-repeat: no-repeat;
     background: rgba(0,0,0,0.9);
 }
 
 .navbar-brand {
+    background-image: url('img/logo.png.png');
+    background-size: cover;
+    background-position: left;
     font-weight: bold;
     color: var(--gold) !important;
     letter-spacing: 2px;
 }
 
 .navbar-brand .logo-navbar {
-    height: 140px;
+    height: 100px;
     width: auto;
 }
 
@@ -171,7 +211,7 @@ footer {
 }
 
 .preloader-logo {
-    width: 300px;
+    width: 200px;
     animation: pulse 1.8s infinite ease-in-out;
 }
 
@@ -300,28 +340,214 @@ footer {
     z-index: 2;
 }
 
+/* =========================
+   COOKIE FLOATING PREMIUM
+========================= */
+
+.cookie-floating {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 360px;
+    background: #151515;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    z-index: 9999;
+    animation: fadeInUp 0.6s ease;
+}
+
+.cookie-floating p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cookie-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cookie-link:hover {
+    text-decoration: underline;
+}
+
+/* Animação */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .cookie-floating {
+        right: 15px;
+        left: 15px;
+        bottom: 20px;
+        width: auto;
+    }
+}
+
+/* ==============================
+   SECTION MAQUININHAS PREMIUM
+============================== */
+
+.maquininhas-full {
+    background-image: url('img/maquina.png');
+    background-size: cover;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+    padding: 140px 0;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Overlay escuro elegante */
+.maquininhas-full::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.85) 08%,
+        rgba(0,0,0,0.75) 22%,
+        rgba(0,0,0,0.4) 45%,
+        rgba(0,0,0,0.1) 57%
+    );
+}
+
+/* Conteúdo acima do overlay */
+.maquina-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Badge */
+.badge-highlight {
+    display: inline-block;
+    background: linear-gradient(45deg, #e4cd4b, #F5E2A3);
+    color: #000;
+    font-weight: 650;
+    padding: 6px 8px;
+    font-size: 10px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+/* Título Impactante */
+.maquina-title {
+    font-size: 48px;
+    font-weight: 350;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.maquina-title strong {
+    color: var(--gold);
+}
+
+/* Subtítulo */
+.maquina-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 520px;
+}
+
+/* Lista */
 .maquininha-list {
     list-style: none;
     padding: 0;
+    margin-bottom: 30px;
 }
 
 .maquininha-list li {
     margin-bottom: 12px;
     font-size: 16px;
-    color: var(--gray);
+    color: #fffbe7;
 }
 
 .maquininha-list i {
-    color: var(--gold);
-    margin-right: 10px;
+    color: #ecda8b;
+    margin-right: 8px;
 }
 
+/* Botão chamativo */
+.btn-maquina {
+    background: linear-gradient(45deg, #dfd186, #F5C542);
+    color: #000;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+}
 
+.btn-maquina:hover {
+    color: #36352e;
+    background: linear-gradient(30deg, #ffec83, #ffe397);
+    transform: translateY(5px);
+    box-shadow: 0 15x 10px rgba(300, 300, 0, 0.4);
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .maquina-title {
+        font-size: 34px;
+    }
+
+    .maquininhas-full {
+        padding: 100px 0;
+        background-position: center;
+    }
+}
 
 
 
 </style>
 </head>
+
+<div id="cookie-banner" class="cookie-floating">
+  
+  <p>
+    Este site utiliza cookies e dados pessoais conforme nossos 
+    <a href="#" class="cookie-link">Termos de Uso e Política de Privacidade</a>.
+  </p>
+
+  <button id="accept-cookies" class="btn btn-gold w-100 mt-3">
+    OK
+  </button>
+
+</div>
+
+
+<script>
+  const cookieBanner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("accept-cookies");
+
+  // Verifica se já foi aceito
+  if (localStorage.getItem("cookiesAccepted")) {
+    cookieBanner.style.display = "none";
+  }
+
+  acceptBtn.addEventListener("click", function() {
+    localStorage.setItem("cookiesAccepted", "true");
+    cookieBanner.style.display = "none";
+  });
+</script>
+
 
 <script>
 window.addEventListener("load", function () {
@@ -338,11 +564,24 @@ window.addEventListener("load", function () {
 <img src="img/logo.png.png" alt="Shalom" class="preloader-logo">
 </div>
 
+<script>
+  // Desativa restauração automática de scroll do navegador
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Sempre iniciar no topo ao carregar
+  window.addEventListener('load', function () {
+    window.scrollTo(0, 0);
+  });
+</script>
+
+
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="#">
-    <img src="img/logo.png.png" alt=" " class="logo-navbar">
+    <!--<img src="img/logo.png.png" alt=" " class="logo-navbar">-->
     </a>
     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
@@ -366,8 +605,16 @@ window.addEventListener("load", function () {
     <p class="lead mb-4">
         Conta digital, Pix, pagamentos e gestão financeira em uma plataforma moderna, segura e transparente.
     </p>
-    <a href="#contato" class="btn btn-gold me-3">Quero abrir minha conta</a>
-    <a href="#contato" class="btn btn-outline-gold">Falar com um especialista</a>
+    <div class="hero-buttons">
+    <a href="#contato" class="btn btn-gold btn-hero">
+        Quero abrir minha conta
+    </a>
+
+    <a href="#contato" class="btn btn-outline-gold btn-hero">
+        Falar com um especialista
+    </a>
+</div>
+
 </div>
 </section>
 
@@ -481,66 +728,6 @@ window.addEventListener("load", function () {
 </div>
 </section>
 
-<section id="maquininhas" class="maquininhas-section-3d">
-
-  <!-- LINHA DOURADA FULL WIDTH -->
-  <svg class="gold-wave" viewBox="0 0 1920 300" preserveAspectRatio="none">
-    <defs>
-      <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#8F6B29"/>
-        <stop offset="30%" stop-color="#C6A75E"/>
-        <stop offset="50%" stop-color="#F5E2A3"/>
-        <stop offset="70%" stop-color="#C6A75E"/>
-        <stop offset="100%" stop-color="#8F6B29"/>
-      </linearGradient>
-    </defs>
-    <path d="M0 270 Q960 355 1920 210"  
-          stroke="url(#goldGradient)" 
-          stroke-width="5" 
-          fill="none"/>
-  </svg>
-
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- TEXTO -->
-      <div class="col-lg-6">
-        <h2 class="gold mb-4">Maquininhas Shalom</h2>
-        <p class="lead mb-4">
-          Tecnologia, mobilidade e performance para quem precisa receber
-          com segurança e agilidade.
-        </p>
-
-        <ul class="maquininha-list">
-          <li><i class="bi bi-check-circle-fill"></i> Pix direto na maquininha</li>
-          <li><i class="bi bi-check-circle-fill"></i> Crédito e débito</li>
-          <li><i class="bi bi-check-circle-fill"></i> Conexão Wi-Fi e 4G</li>
-          <li><i class="bi bi-check-circle-fill"></i> Liquidação rápida</li>
-        </ul>
-
-        <a href="#contato" class="btn btn-gold mt-4">
-          Solicitar Maquininha
-        </a>
-      </div>
-
-
-    </div>
-  </div>
-</section>
-
-
-<!-- SEGURANÇA -->
-<section id="seguranca" class="text-center">
-<div class="container">
-<h2 class="gold">Segurança, Compliance e Confiança</h2>
-<div class="divider"></div>
-<p class="col-lg-8 mx-auto">
-Processos de KYC, prevenção à fraude, compliance regulatório e parcerias com instituições financeiras reguladas.
-A segurança dos recursos e dados é prioridade absoluta.
-</p>
-</div>
-</section>
-
 <!-- COMO FUNCIONA (ATUALIZADO COM ÍCONES COERENTES) -->
 <section id="como-funciona" class="bg-dark-custom text-center">
 <div class="container">
@@ -584,6 +771,60 @@ A segurança dos recursos e dados é prioridade absoluta.
 </div>
 </div>
 </section>
+
+<section id="maquininhas" class="maquininhas-full">
+
+  <div class="container maquina-content">
+
+    <div class="row">
+      <div class="col-lg-6">
+
+        <span class="badge-highlight">NOVA GERAÇÃO DE PAGAMENTOS</span>
+
+        <h2 class="maquina-title">
+          Venda mais. Receba mais rápido.
+          <br><strong>Cresça sem limites.</strong>
+        </h2>
+
+        <p class="maquina-subtitle">
+          A maquininha feita para quem leva o negócio a sério.
+          Pix direto no visor, crédito e débito com taxas competitivas
+          e dinheiro na conta com agilidade.
+          <strong>Sem burocracia. Sem complicação.</strong>
+        </p>
+
+        <ul class="maquininha-list">
+          <li><i class="bi bi-check-circle-fill"></i> Pix direto na maquininha — sem precisar de celular</li>
+          <li><i class="bi bi-check-circle-fill"></i> Crédito e débito com taxas justas</li>
+          <li><i class="bi bi-check-circle-fill"></i> Conexão Wi-Fi e 4G para vender em qualquer lugar</li>
+          <li><i class="bi bi-check-circle-fill"></i> Liquidação rápida para manter seu caixa saudável</li>
+        </ul>
+
+        <a href="#contato" class="btn btn-maquina">
+          Começar a vender agora
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SEGURANÇA -->
+<section id="seguranca" class="text-center">
+<div class="container">
+<h2 class="gold">Segurança, Compliance e Confiança</h2>
+<div class="divider"></div>
+<p class="col-lg-8 mx-auto">
+Processos de KYC, prevenção à fraude, compliance regulatório e parcerias com instituições financeiras reguladas.
+A segurança dos recursos e dados é prioridade absoluta.
+</p>
+</div>
+</section>
+
+
 
 <!-- FALE CONOSCO -->
 <section id="contato" class="text-center bg-dark-custom">
@@ -654,6 +895,8 @@ A segurança dos recursos e dados é prioridade absoluta.
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 <footer id="footer" class="footer-custom">
 
