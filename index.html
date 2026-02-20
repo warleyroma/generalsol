@@ -128,23 +128,23 @@ h1, h2, h3, h4 {
 }
 
 .navbar {
-    
+    padding: 8px 0;   /* diminui altura */
     background-repeat: no-repeat;
     background: rgba(0,0,0,0.9);
 }
 
 .navbar-brand {
-    background-image: url('img/logo.png.png');
-    background-size: cover;
-    background-position: left;
     font-weight: bold;
     color: var(--gold) !important;
     letter-spacing: 2px;
 }
 
-.navbar-brand .logo-navbar {
-    height: 100px;
-    width: auto;
+.logo-navbar {
+    height: 60px;      /* altura da navbar */
+    width: 140px;      /* largura fixa */
+    object-fit: cover; /* ativa o corte */
+    object-position: center 30%;
+    transform: scale(1.4);  /* ZOOM */
 }
 
 @media (max-width: 768px) {
@@ -581,7 +581,7 @@ window.addEventListener("load", function () {
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="#">
-    <!--<img src="img/logo.png.png" alt=" " class="logo-navbar">-->
+    <img src="img/logo.png.png" alt=" " class="logo-navbar">
     </a>
     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
