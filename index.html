@@ -178,6 +178,7 @@ h1, h2, h3, h4 {
 .nav-link {
     color: #fff !important;
     margin-left: 15px;
+    padding:14px 0;
 }
 
 .nav-link:hover {
@@ -193,10 +194,88 @@ footer {
 }
 
 .hero {
+    min-height: 80vh;
+    padding-top: 120px;
+    padding-bottom: 80px;
     height: 100vh;
     display: flex;
     align-items: center;
     background: linear-gradient(to bottom, #000, #0b0b0b);
+}
+
+@media (max-width:768px){
+
+.hero h1{
+    font-size:28px;
+    line-height:1.3;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.btn-hero{
+    width:100%;
+    max-width:360px;
+    height:58px;
+}
+
+.hero-buttons{
+    gap:12px;
+}
+
+.maquininhas-full{
+    padding:80px 0;
+    background-position:center;
+}
+
+.maquina-title{
+    font-size:26px;
+}
+
+.maquina-subtitle{
+    font-size:15px;
+}
+
+.card-custom{
+    padding:24px;
+}
+
+.icon-gold{
+    font-size:28px;
+}
+
+.cookie-floating{
+    font-size:13px;
+    padding:18px;
+}
+
+
+.map-full iframe{
+    height:200px;
+}
+
+}
+
+@media (max-width: 991px) {
+
+.navbar-collapse{
+    background: var(--black);
+    padding: 15px;
+    border-top: 1px solid #222;
+    transition: all .3s ease;
+
+}
+
+.navbar-nav{
+    text-align: center;
+}
+
+.nav-link{
+    padding: 12px 0;
+}
+
+
 }
 
 .divider {
@@ -630,12 +709,12 @@ window.addEventListener("load", function () {
 
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="#">
     <img src="img/logo.png.png" alt=" " class="logo-navbar">
     </a>
-    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="menu">
