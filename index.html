@@ -57,9 +57,6 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-section {
-    padding: 100px 0;
-}
 
 h1, h2, h3, h4 {
     font-weight: 600;
@@ -69,6 +66,10 @@ h1, h2, h3, h4 {
     color: var(--gold);
 }
 
+section {
+    padding: 100px 0;
+    scroll-margin-top: 120px;
+}
 /* =========================
    HERO BUTTONS PADRONIZADOS
 ========================= */
@@ -255,6 +256,19 @@ footer {
     height:200px;
 }
 
+}
+
+/* Isso faz a seção "respirar" e parar no lugar certo */
+#o-que-faz {
+    scroll-margin-top: 20px; /* Ajuste esse valor se a navbar for muito alta */
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+}
+
+/* Garante que o container interno não tenha margens negativas que "puxem" a seção */
+#o-que-faz .container {
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 991px) {
@@ -1130,9 +1144,6 @@ A segurança dos recursos e dados é prioridade absoluta.
 
 </body>
 </html>
-
-
-
 
 
 
